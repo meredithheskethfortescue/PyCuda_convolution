@@ -16,11 +16,9 @@ with open('./kernel.cu', 'r') as f:
 # bind cuda textures to python
 TEX_IMG = mod.get_texref('tex_img')
 TEX_KERNEL = mod.get_texref('tex_kernel')
-TEX_IMG_CIE = mod.get_texref('tex_img_cie')
 
 # bind cuda kernel function to python
 CUDA_CONVOLUTION = mod.get_function('convolve')
-CUDA_VDI5595 = mod.get_function('vdi5595')
 
 del mod  # module not needed anymore in global space
 
