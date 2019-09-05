@@ -37,7 +37,7 @@ __global__ void convolve(const int input_width,
             }
         }
 
-        // todo: output to texture?
+        // write to output
         int idx = col * input_width + row;
         output[idx] = value;
     }
