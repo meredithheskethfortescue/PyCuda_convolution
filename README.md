@@ -1,6 +1,6 @@
-# Simple Convolution using Python 3 and CUDA
+# Convolution using Python 3 and CUDA for GPU-Acceleration
 
-Minimal example of a CUDA kernel that applies a convolution to a 2D matrix using tex2D.
+Minimal example of a CUDA kernel that applies a convolution to a 2D matrix using tex2D. The kernel is written in pure CUDA-C but launched from Python 3 by using the PyCuda API.
 
 `kernel.cu` contains the CUDA kernel which is read by the main file `python_wrapper.py`.
 
