@@ -20,7 +20,8 @@ RUN apt update && apt install -y \
     cmake \
     libboost-all-dev \
     libboost-python-dev \
-    libboost-thread-dev
+    libboost-thread-dev \
+    python3-tk
 
 # Additional Python Packages
 RUN pip3 install --upgrade pip
