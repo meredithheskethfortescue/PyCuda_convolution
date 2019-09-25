@@ -2,7 +2,7 @@
 
 Minimal example of a CUDA kernel that applies a convolution to a 2D matrix using tex2D. The kernel is written in pure CUDA-C but launched from Python 3 by using the PyCuda API.
 
-`kernel.cu` contains the CUDA kernel which is read by the main file `python_wrapper.py`.
+`kernel.cu` contains the CUDA kernel which is read by the `main.py` file.
 
 A possible setup with docker is described in the `docker` directory.
 `get_docker.sh` installs docker and it's dependencies for usage with GPU.
