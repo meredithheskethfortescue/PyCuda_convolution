@@ -31,6 +31,7 @@ RUN pip3 install \
     scikit-image \
     numba \
     Pillow \
+    pandas \
     tqdm
 
 
