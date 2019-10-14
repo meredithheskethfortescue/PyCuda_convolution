@@ -11,3 +11,7 @@ After building a docker image with
 docker build -t stascheit/gpgpu .
 ```
 the `launch_tst.sh` can be executed to run unittests (in `tst_docker_setup`) to the built docker image in order to validate the installation.
+
+# Index terminology in CUDA-C
+
+![fig:IndexTerminology](./img/axes.png)
