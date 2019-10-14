@@ -1,9 +1,11 @@
 /// Device - CUDA Kernel: Convolution
+/// Every pixel in the image gets assigned to one thread.
+/// Padding is handled by using the `tex2D` function in CUDA.
 /*
 Index terminology:
-x = row = axis 1 = width = horizontal
-y = col = axis 0 = height = vertical
-z = channel = axis 2 = depth
+z = channel = axis 0 = depth = normal
+x = col = axis 1 = width = horizontal
+y = row = axis 2 = height = vertical
 */
 
 #include <pycuda-helpers.hpp>
@@ -17,6 +19,10 @@ __global__ void convolve(const int input_width,
                          const int input_height,
                          const int kernel_radius,
                          float *output) {
+    // :input_width, input_height: Size of the input matrix is required to calculate the tread indices.
+    // :kernel_radius: By requesting the radius instead of the diameter of the kernel matrix, errors due to an even kernel width/height can't appear.
+    // :output: Pointer to the output matrix.
+
     // get coordinates by thread index
     int row = blockIdx.x * blockDim.x + threadIdx.x;
     int col = blockIdx.y * blockDim.y + threadIdx.y;
